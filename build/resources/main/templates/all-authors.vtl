@@ -12,7 +12,7 @@
       <tbody>
         #foreach($author in $authors) <!--authors calls author.all()-->
         <tr>
-          <td><a href="/authors/$author.getId()">$author.getName()</a></td>
+          <td><a href="/all-authors/$author.getId()">$author.getName()</a></td>
           <td>
             #foreach($book in $author.getBooks())
               <ul>
@@ -34,3 +34,4 @@
     </table>
 
     <h3 class="clickable"><center><a href="/adminhome">Return to Admin Page</a></center></h3>
+    <h3 class="clickable"><center><a href="/">Return to Home Page</a></center></h3>

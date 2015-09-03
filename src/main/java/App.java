@@ -78,6 +78,36 @@ import java.util.Set;
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    get("/all-authors/:id", (request,response) ->{
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      int id = Integer.parseInt(request.params("id"));
+      Author author = Author.find(id);
+      model.put("author", author);
+      model.put("books", Book.all());
+      model.put("template", "templates/author.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    post("all-authors/:id/addbooks", (request, response) -> {
+      int bookId = Integer.parseInt(request.queryParams("book_id"));
+      int authorId = Integer.parseInt(request.queryParams("author_id"));
+      Author author = Author.find(authorId);
+      Book book = Book.find(bookId);
+      author.addBook(book);
+      response.redirect("/all-authors/" + authorId);
+      return null;
+    });
+
+    get("/patron", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      model.put("books", Book.all());
+      model.put("template", "templates/patron.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+
+
+
 
 
 
@@ -106,22 +136,7 @@ import java.util.Set;
     // //gets Add Author form
 
 
-    // //Get page to view and update authors in db
-    // get("/all-authors", (request, response) -> {
-    //   HashMap<String, Object> model = new HashMap<String, Object>();
-    //   model.put("authors", Author.all());
-    //   model.put("template", "templates/all-authors.vtl");
-    //   return new ModelAndView(model, layout);
-    // }, new VelocityTemplateEngine());
-    //
-    // get("/all-books", (request, response) -> {
-    //   HashMap<String, Object> model = new HashMap<String, Object>();
-    //   model.put("books", Book.all());
-    //   model.put("template", "templates/all-books.vtl");
-    //   return new ModelAndView(model, layout);
-    // }, new VelocityTemplateEngine());
-    //
-    //
+
     // get("/authors/:id/addbook", (request, response) -> {
     //   HashMap<String, Object> model = new HashMap<String, Object>();
     //

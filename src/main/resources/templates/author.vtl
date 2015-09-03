@@ -1,0 +1,27 @@
+<h1>$author.getName()</h1>
+
+  <h4><ul>
+    #foreach($book in $author.getBooks())
+      <li>Book title: $book.getTitle(), Book genre: $book.getGenre() </li>
+    #end
+  </ul></h4>
+
+
+<h4>Add a book to this author:</h4>
+
+<form action='/all-authors/$author.getId()/addbooks' method='post'>
+    <input id="author_id" name="author_id" type="hidden" value="$author.getId()">
+    <label for="book_id">Select a Book</label>
+    <select id='book_id' name='book_id' type='text'>
+      #foreach($book in $books)
+        <option value="$book.getId()"> $book.getTitle() $book.getGenre() </option>
+      #end
+    </select>
+    <button type='submit'>Add book</button>
+</form>
+
+<p><a href="/all-authors/$author.getId()/edit">Update this author's information</a></p>
+
+
+<h3 class="clickable"><center><a href="/adminhome">Return to Admin Page</a></center></h3>
+<h3 class="clickable"><center><a href="/">Return to Home Page</a></center></h3>
