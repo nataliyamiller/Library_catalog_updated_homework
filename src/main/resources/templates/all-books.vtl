@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+  <h1><center>Administrator: Library Catalog</center></h1>
+  <h2>All Books</h2>
+
+    <table border="1" class="table table-striped">
+      <th>Title</th>
+      <th>Genre</th>
+      <th>Author(s)</th>
+      <th>Number of Copies</th>
+
+      <tbody>
+        #foreach($book in $books) <!--books calls book.all()-->
+        <tr>
+          <td><a href="/books/$book.getId()">$book.getTitle()</a></td>
+          <td><a href="/boooks/$book.getId()">$book.getGenre()</a></td>
+          <td>
+            #foreach($author in $book.getAuthors())
+              <ul>
+                <li>$author.getName()</li>
+              </ul>
+            #end
+          </td>
+          <td><a href="/boooks/$book.getId()">$book.getCopies()</a></td>
+        </tr>
+        #end
+      </tbody>
+    </table>
+
+
+        <h3 class="clickable"><center><a href="/adminhome">Return to Admin Page</a></center></h3>
+        <h3 class="clickable"><center><a href="/">Return to Home Page</a></center></h3>

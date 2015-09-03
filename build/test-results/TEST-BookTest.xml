@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="BookTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2015-09-02T23:58:08" hostname="Nataliyas-MBP" time="0.211">
+  <properties/>
+  <testcase name="all_emptyAtFirst" classname="BookTest" time="0.025"/>
+  <testcase name="getAuthors_returnsAllAuthors_List" classname="BookTest" time="0.025"/>
+  <testcase name="update_updatesBookTitleAndGenreInDatabase_true" classname="BookTest" time="0.048"/>
+  <testcase name="equals_returnsTrueIfBooksAreTheSame" classname="BookTest" time="0.009"/>
+  <testcase name="save_savesIntoDatabase_true" classname="BookTest" time="0.025"/>
+  <testcase name="delete_deletesBookAndListAssociations" classname="BookTest" time="0.051"/>
+  <testcase name="find_findsBookInDatabase_true" classname="BookTest" time="0.025"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

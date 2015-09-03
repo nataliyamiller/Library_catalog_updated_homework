@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="PatronTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2015-09-02T23:58:08" hostname="Nataliyas-MBP" time="0.077">
+  <properties/>
+  <testcase name="addBook_addsBookToPatron" classname="PatronTest" time="0.077"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

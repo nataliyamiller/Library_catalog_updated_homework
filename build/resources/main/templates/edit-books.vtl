@@ -1,0 +1,36 @@
+<h2>Edit $book.getTitle()</h2>
+
+  <form action="/books/$book.getId()/edit" method="post">
+
+    <div class="form-group">
+      <label for="title">Name</label>
+      <input id="title" name="title" type="text" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="genre">Genre</label>
+      <input id="genre" name="getGenre" type="text" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="copies>">Number of copies</label>
+      <input id="copies" name="copies" class="form-control">
+
+
+    <button type="submit">Add</button>
+
+  </form>
+
+<h2>Add Courses for $student.getName()</h2>
+  <form action="/students/$student.getId()/addcourse" method="post">
+    <div>
+      <label for="course_id">Select a course</label>
+      <select id="course_id" name="course_id" type="text">
+        #foreach($course in $courses)
+        <option value="$course.getId()">$course.getCourseName()</option>
+        #end
+      </select>
+      <button type="submit">Add course</button>
+    </div>
+  </form>
+<center><a href="/">Home</a></center>

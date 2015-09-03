@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+
+    <h2>Add Author</h2>
+
+    <form action="/add-author" method="post">
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" class="form-control">
+      </div>
+
+      <button type="submit">Add</button>
+
+    </form>
+
+
+ <!-- if book already exists in the book list, then author.addBook()
+ else -> add this book to the list before we can append it to this author-->
+
+    <h2>Add Books for $author.getName()</h2>
+    <form action="/authors/$author.getId()/addbook" method="post">
+      <div>
+        <label for="book_id">Select a book</label>
+        <select id="book_id" name="book_id" type="text">
+          #foreach($book in $books)
+          <option value="$book.getId()">$book.getTitle()</option>
+          #end
+        </select>
+        <button type="submit">Add book</button>
+      </div>
+    </form>
+
+<h3 class="clickable"><center><a href="/adminhome">Return to Admin Page</a></center></h3>
