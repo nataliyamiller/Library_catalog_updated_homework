@@ -120,11 +120,24 @@ import java.util.Set;
       HashMap<String, Object> model = new HashMap<String, Object>();
       int id = Integer.parseInt(request.params(":id"));
       Patron patron = Patron.find(id);
+      Checkout checkout = new Checkout();
+      model.put("checkout", checkout);
       model.put("patron", patron);
       model.put("name", patron.getPatronName());
+      model.put("books", Book.all());
       model.put("template", "templates/patron.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
+
+    post("/patron/:id/checkout-books", (request, response) -> {
+        int bookId = Integer.parseInt(request.queryParams("book_id"));
+        int patronId = Integer.parseInt(request.queryParams("patron_id"));
+        Patron patron = Patron.find(patronId);
+        Book book = Book.find(bookId);
+        patron.addBook(book);
+        response.redirect("/patron/" + patronId);
+        return null;
+      });
 
 
 

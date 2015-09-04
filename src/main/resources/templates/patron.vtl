@@ -1,4 +1,30 @@
 
 <h1>$patron.getPatronName(), welcome to your account!</h1>
 
+#if($patron.getBooks().size() != 0)
+  <h3>You checked out the following books:</h3>
+
+  <table class="table">
+    <ul>
+      #foreach($book in $patron.getBooks())
+        <li>$book.getTitle(), $checkout.getDueDate($patron.getId()) , $checkout.getCheckoutDate($patron.getId())</li>
+
+      #end
+    </ul>
+  </table>
+  #else
+    <h3>$patron.getPatronName(), you did not pick any books yet! Checkout your first book and take it home!</h3>
+  #end
+
+  <form action='/patron/$Patron.getId()/checkout-books' method='post'>
+      <input id="patron_id" name="patron_id" type="hidden" value="$patron.getId()">
+      <label for="book_id">Select a Book</label>
+      <select id='book_id' name='book_id' type='text'>
+        #foreach($book in $books)
+          <option value="$book.getId()"> $book.getTitle() $book.getGenre() </option>
+        #end
+      </select>
+      <button type='submit'>Checkout this book</button>
+  </form>
+
 <h3 class="clickable"><center><a href="/">Return to Home Page</a></center></h3>
