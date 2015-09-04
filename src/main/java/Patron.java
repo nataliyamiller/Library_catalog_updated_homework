@@ -6,6 +6,8 @@ import java.util.ArrayList;
   public class Patron {
     private int id;
     private String patron_name;
+    private String username;
+    private String password;
 
 
     public int getId() {
@@ -14,6 +16,14 @@ import java.util.ArrayList;
 
     public String getPatronName() {
       return patron_name;
+    }
+
+    public String getUsername() {
+      return username;
+    }
+
+    public String getPassword() {
+      return password;
     }
 
     public Patron (String patron_name) {
@@ -69,13 +79,12 @@ import java.util.ArrayList;
       }
     }
 
-    public void addBook(Book book, String duedate) { //comes from html page
+    public void addBook(Book book) { //comes from html page
       try(Connection con = DB.sql2o.open()) {
-        String sql = "INSERT INTO checkouts (patron_id, book_id, duedate) VALUES (:patron_id, :book_id, :duedate)";
+        String sql = "INSERT INTO checkouts (patron_id, book_id) VALUES (:patron_id, :book_id)";
         con.createQuery(sql)
           .addParameter("patron_id", id)
           .addParameter("book_id", book.getId())
-          .addParameter("duedate", duedate)
           .executeUpdate();
         }
     }

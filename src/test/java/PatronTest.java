@@ -19,7 +19,7 @@ public class PatronTest {
     myPatron.save();
 
 
-    myPatron.addBook(myBook, "tomorrow");
+    myPatron.addBook(myBook);
     Book savedBook = myPatron.getBooks().get(0);
     assertTrue(myBook.equals(savedBook));
   }

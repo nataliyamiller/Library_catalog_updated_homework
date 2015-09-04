@@ -98,9 +98,30 @@ import java.util.Set;
       return null;
     });
 
-    get("/patron", (request, response) -> {
+    get("/create-account", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
-      model.put("books", Book.all());
+      // model.put("patron_name", request.session().attribute("patron_name"));
+      model.put("template", "templates/create-account.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+
+    post("/create-account", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      String name = request.queryParams("patron_name");
+      // request.session().attribute("patron_name", patron_name);
+      Patron patron = new Patron(name);
+      patron.save();
+      response.redirect("/patron/" + patron.getId());
+      return null;
+    });
+
+    get("/patron/:id", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      int id = Integer.parseInt(request.params(":id"));
+      Patron patron = Patron.find(id);
+      model.put("patron", patron);
+      model.put("name", patron.getPatronName());
       model.put("template", "templates/patron.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
