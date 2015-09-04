@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="PatronTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2015-09-04T05:27:01" hostname="Nataliyas-MacBook-Pro.local" time="0.044">
+<testsuite name="PatronTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2015-09-04T05:34:21" hostname="Nataliyas-MacBook-Pro.local" time="0.045">
   <properties/>
-  <testcase name="addBook_addsBookToPatron" classname="PatronTest" time="0.044"/>
+  <testcase name="addBook_addsBookToPatron" classname="PatronTest" time="0.045"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

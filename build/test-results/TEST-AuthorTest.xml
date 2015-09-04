@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="AuthorTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2015-09-04T05:27:00" hostname="Nataliyas-MacBook-Pro.local" time="0.457">
+<testsuite name="AuthorTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2015-09-04T05:34:20" hostname="Nataliyas-MacBook-Pro.local" time="0.521">
   <properties/>
-  <testcase name="equals_returnTrueIfAuthorsAreTheSame" classname="AuthorTest" time="0.135"/>
-  <testcase name="addBook_addsBookToAuthor" classname="AuthorTest" time="0.095"/>
+  <testcase name="equals_returnTrueIfAuthorsAreTheSame" classname="AuthorTest" time="0.143"/>
+  <testcase name="addBook_addsBookToAuthor" classname="AuthorTest" time="0.136"/>
   <testcase name="delete_deletesAllAuthorsAndListAssociation" classname="AuthorTest" time="0.063"/>
-  <testcase name="all_emptyAtFirst" classname="AuthorTest" time="0.018"/>
-  <testcase name="getAuthors_returnsAllBooks_ArrayList" classname="AuthorTest" time="0.05"/>
+  <testcase name="all_emptyAtFirst" classname="AuthorTest" time="0.032"/>
+  <testcase name="getAuthors_returnsAllBooks_ArrayList" classname="AuthorTest" time="0.049"/>
   <testcase name="save_savesIntoDatabase_true" classname="AuthorTest" time="0.027"/>
-  <testcase name="update_changesAuthorNameAndEnrollmentInDatabase_true" classname="AuthorTest" time="0.038"/>
-  <testcase name="find_findsAuthorInDatabase_true" classname="AuthorTest" time="0.027"/>
+  <testcase name="update_changesAuthorNameAndEnrollmentInDatabase_true" classname="AuthorTest" time="0.041"/>
+  <testcase name="find_findsAuthorInDatabase_true" classname="AuthorTest" time="0.026"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -19,9 +19,21 @@ public class CheckoutTest {
     myPatron.save();
     myPatron.addBook(myBook);
     Checkout checkout = new Checkout();
-    assertEquals(checkout.dueDate(myPatron.getId()), "09/24/2015");
+    assertEquals(checkout.getDueDate(myPatron.getId()), "09/24/2015");
+  }
+
+  @Test
+  public void getduedate_returnsCheckoutDateForABook_true() {
+    Book myBook = new Book("Book", "Genre", 1);
+    myBook.save();
+    Patron myPatron = new Patron("John Smith");
+    myPatron.save();
+    myPatron.addBook(myBook);
+    Checkout checkout = new Checkout();
+    assertEquals(checkout.getCheckoutDate(myPatron.getId()), "09/03/2015");
 
   }
+
 
 
 }
