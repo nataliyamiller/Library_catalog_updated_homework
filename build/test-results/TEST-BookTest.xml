@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="BookTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2015-09-04T05:20:25" hostname="Nataliyas-MacBook-Pro.local" time="0.216">
+<testsuite name="BookTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2015-09-04T05:27:01" hostname="Nataliyas-MacBook-Pro.local" time="0.215">
   <properties/>
   <testcase name="all_emptyAtFirst" classname="BookTest" time="0.018"/>
   <testcase name="getAuthors_returnsAllAuthors_List" classname="BookTest" time="0.025"/>
-  <testcase name="update_updatesBookTitleAndGenreInDatabase_true" classname="BookTest" time="0.052"/>
-  <testcase name="equals_returnsTrueIfBooksAreTheSame" classname="BookTest" time="0.01"/>
-  <testcase name="save_savesIntoDatabase_true" classname="BookTest" time="0.027"/>
-  <testcase name="delete_deletesBookAndListAssociations" classname="BookTest" time="0.052"/>
+  <testcase name="update_updatesBookTitleAndGenreInDatabase_true" classname="BookTest" time="0.051"/>
+  <testcase name="equals_returnsTrueIfBooksAreTheSame" classname="BookTest" time="0.009"/>
+  <testcase name="save_savesIntoDatabase_true" classname="BookTest" time="0.026"/>
+  <testcase name="delete_deletesBookAndListAssociations" classname="BookTest" time="0.055"/>
   <testcase name="find_findsBookInDatabase_true" classname="BookTest" time="0.026"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

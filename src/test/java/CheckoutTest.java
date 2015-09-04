@@ -19,7 +19,7 @@ public class CheckoutTest {
     myPatron.save();
     myPatron.addBook(myBook);
     Checkout checkout = new Checkout();
-    assertEquals(checkout.dueDate(myPatron.getId()), "2015-09-24");
+    assertEquals(checkout.dueDate(myPatron.getId()), "09/24/2015");
 
   }
 

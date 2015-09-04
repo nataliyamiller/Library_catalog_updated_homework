@@ -20,7 +20,7 @@ public class Checkout {
     return duedate;
   }
 
-  public Date dueDate(int patron_id) {
+  public String dueDate(int patron_id) {
   try(Connection con = DB.sql2o.open()) {
     String sql = "SELECT duedate FROM patrons JOIN checkouts ON (patrons.id = checkouts.patron_id)" +
     " JOIN books ON (checkouts.book_id = books.id) WHERE patrons.id = :patron_id";
@@ -28,7 +28,9 @@ public class Checkout {
       .addParameter("patron_id", patron_id)
       // .addParameter("book_id", book_id)
       .executeAndFetchFirst(Date.class);
-      return date;
+      SimpleDateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+      String stringDuedate = df.format(date);
+      return stringDuedate;
     }
   }
 
